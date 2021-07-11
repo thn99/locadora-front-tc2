@@ -1,0 +1,49 @@
+<div class="listing">
+  <table>
+    <tr>
+      <th *ngFor="let col of columns">{{ col }}</th>
+    </tr>
+    <tr *ngFor="let p of peopleList">
+      <td>
+        <a>
+          {{ p.name }}
+        </a>
+      </td>
+      <td>
+        {{ getSex(p.sex) }}
+      </td>
+      <td>
+        {{ getFormattedDate(p.birthDate) | birthDatePipe }}
+      </td>
+      <td>
+        {{ p.phone | phonePipe }}
+      </td>
+      <td>
+        {{ p.adress }}
+      </td>
+      <td *ngIf="p.isAtendente == true">Sim</td>
+      <td *ngIf="p.isAtendente == false">Não</td>
+      <td>
+        <button
+          mat-button
+          mat-raised-button
+          color="warn"
+          (click)="deleteClient(p)"
+        >
+          Apagar
+        </button>
+      </td>
+      <td>
+        <button
+          mat-button
+          mat-raised-button
+          color="basic"
+          routerLink="{{p._id}}"
+          (click)="getClient(p)"
+        >
+          Editar
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

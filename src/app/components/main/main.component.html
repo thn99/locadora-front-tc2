@@ -1,0 +1,33 @@
+<mat-toolbar>
+  <button mat-button class="logout" routerLink="/login">Sair</button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <button mat-button class="menu-button" routerLink="registerMovie">
+      <mat-icon>queue</mat-icon>
+      <span>&nbsp; Registrar filme</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="registerClient">
+      <mat-icon>account_box</mat-icon>
+      <span>&nbsp; Registrar cliente</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="allMovies">
+      <mat-icon>movie</mat-icon>
+      <span>&nbsp; Coleção</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="allClients">
+      <mat-icon>recent_actors</mat-icon>
+      <span>&nbsp; Clientes</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="locations">
+      <mat-icon>recent_actors</mat-icon>
+      <span>&nbsp; Locações</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z4">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,89 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2 *ngIf="isEditing() == false">Registrar pessoa</h2>
+      <h2 *ngIf="isEditing() == true">Editar pessoa</h2>
+    </div>
+
+    <form [formGroup]="clientForm">
+      <div class="field-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label> Nome </mat-label>
+          <input formControlName="name" matInput />
+          <mat-error *ngIf="clientForm.get('name').hasError('required')">
+            Nome é obrigatório
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label> Data de nascimento </mat-label>
+          <input formControlName="birthDate" matInput placeholder="01/01/1990" mask="d0/M0/0000" />
+          <mat-error *ngIf="clientForm.get('birthDate').hasError('required')">
+            Data de Nascimento é obrigatório
+          </mat-error>
+          <mat-error *ngIf="clientForm.get('birthDate').hasError('pattern')">
+            Valor inserido não segue o padrão DD/MM/AAAA
+          </mat-error>
+        </mat-form-field>
+        
+
+        <div class="full-width" appearance="outline">
+          <mat-label> Sexo </mat-label>
+          <mat-radio-group aria-label="Escolha uma opção" formControlName="sex">
+            <mat-radio-button value="1">Masculino</mat-radio-button>
+            <mat-radio-button value="2">Feminino</mat-radio-button>
+          </mat-radio-group>
+          <div>
+            <mat-error *ngIf="clientForm.get('sex').hasError('required')">
+              Obrigatório
+            </mat-error>
+          </div>
+        </div>
+      </div>
+      <div class="field-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label> Telefone </mat-label>
+          <input formControlName="phone" matInput />
+          <mat-error *ngIf="clientForm.get('phone').hasError('required')">
+            Telefone é obrigatório
+          </mat-error>
+          <mat-error *ngIf="clientForm.get('phone').hasError('minlength')">
+            Telefone deve ter no mínimo 8 números
+          </mat-error>
+          <mat-error *ngIf="clientForm.get('phone').hasError('maxlength')">
+            Telefone deve ter no máximo 13 números (incluso dígito do país)
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label> Endereço </mat-label>
+          <input formControlName="adress" matInput />
+          <mat-error *ngIf="clientForm.get('adress').hasError('required')">
+            Endereço é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="full-width" appearance="outline">
+        <mat-label> Atendente da loja? </mat-label>
+        <mat-radio-group
+          aria-label="Escolha uma opção"
+          formControlName="isAtendente"
+        >
+          <mat-radio-button value="1">Sim</mat-radio-button>
+          <mat-radio-button value="0">Não</mat-radio-button>
+        </mat-radio-group>
+        <div>
+          <mat-error *ngIf="clientForm.get('isAtendente').hasError('required')">
+            Obrigatório
+          </mat-error>
+        </div>
+      </div>
+
+      <button *ngIf="isEditing() == false" mat-flat-button color="primary" (click)="onSubmit()">
+        Enviar
+      </button>
+      <button *ngIf="isEditing() == true" mat-flat-button color="primary" (click)="onSubmitUpdate()">
+        Atualizar
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

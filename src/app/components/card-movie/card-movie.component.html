@@ -1,0 +1,46 @@
+<div class="listing">
+  <table>
+    <tr>
+      <th *ngFor="let col of columns">{{ col }}</th>
+    </tr>
+    <tr *ngFor="let m of movieList" class="listing">
+      <td>
+        <a>
+          {{ m.name }}
+        </a>
+      </td>
+      <td>
+        {{ getCategory(m.category) }}
+      </td>
+      <td>
+        {{ m.releaseDate }}
+      </td>
+      <td>
+        {{ m.director }}
+      </td>
+      <td *ngIf="m.available == true">Sim</td>
+      <td *ngIf="m.available == false">Não</td>
+      <td>
+        <button
+          mat-button
+          mat-raised-button
+          color="warn"
+          (click)="deleteMovie(m)"
+        >
+          Apagar
+        </button>
+      </td>
+      <td>
+        <button
+          mat-button
+          mat-raised-button
+          color="basic"
+          routerLink="{{ m._id }}"
+          (click)="getMovie(m)"
+        >
+          Editar
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
