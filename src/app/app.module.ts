@@ -35,7 +35,8 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { PhonePipePipe } from './pipes/phone-pipe.pipe';
 import { BirthDatePipePipe } from './pipes/birth-date-pipe.pipe';
 import { CardClientComponent } from './components/card-client/card-client.component';
-import { LocationFormComponent } from './components/location-form/location-form.component';
+import { LocationFormComponent } from './components/rent-form/location-form.component';
+import { CardRentComponent } from './components/card-rent/card-rent.component';
 
 
 const maskConfig: Partial<IConfig> = {
@@ -54,7 +55,8 @@ const maskConfig: Partial<IConfig> = {
     CardClientComponent,
     BirthDatePipePipe,
     PhonePipePipe,
-    LocationFormComponent
+    LocationFormComponent,
+    CardRentComponent
   ],
   imports: [
     BrowserModule,

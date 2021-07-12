@@ -14,6 +14,10 @@ export class ServiceMovieService {
     return this.http.get<Movie[]>(this.endpointUrl + '/filmes');
   }
 
+  getMovie(id) : Observable<Movie> {
+    return this.http.get<Movie>(this.endpointUrl + '/filmes/' + id);
+  }
+
   registerMovie(movie) : Observable<any> {
     let body = new HttpParams();
     body = body.set("name", movie.name);

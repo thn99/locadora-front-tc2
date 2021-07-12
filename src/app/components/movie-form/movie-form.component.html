@@ -10,40 +10,72 @@
         <mat-form-field class="full-width" appearance="outline">
           <mat-label> Nome </mat-label>
           <input formControlName="name" matInput />
-          <mat-error *ngIf="movieForm.get('name').hasError('required')"> Nome do filme é obrigatório </mat-error>
+          <mat-error *ngIf="movieForm.get('name').hasError('required')">
+            Nome do filme é obrigatório
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
           <mat-label> Ano </mat-label>
           <input formControlName="releaseDate" matInput />
-          <mat-error *ngIf="movieForm.get('releaseDate').hasError('required')"> Ano do filme é obrigatório </mat-error>
-          <mat-error *ngIf="movieForm.get('releaseDate').hasError('pattern')"> Apenas números são permitidos </mat-error>
-          <mat-error *ngIf="movieForm.get('releaseDate').hasError('maxlength')"> Apenas 4 dígitos são permitidos no campo "Ano" (por enquanto) </mat-error>
+          <mat-error *ngIf="movieForm.get('releaseDate').hasError('required')">
+            Ano do filme é obrigatório
+          </mat-error>
+          <mat-error *ngIf="movieForm.get('releaseDate').hasError('pattern')">
+            Apenas números são permitidos
+          </mat-error>
+          <mat-error *ngIf="movieForm.get('releaseDate').hasError('maxlength')">
+            Apenas 4 dígitos são permitidos no campo "Ano" (por enquanto)
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Categoria</mat-label>
           <mat-select formControlName="category">
-            <mat-option *ngFor="let cat of categoryList;let indexOfelement=index" [value]="indexOfelement+1">{{cat.name}}</mat-option>
+            <mat-option
+              *ngFor="let cat of categoryList; let indexOfelement = index"
+              [value]="indexOfelement + 1"
+              >{{ cat.name }}</mat-option
+            >
           </mat-select>
-          <mat-error *ngIf="movieForm.get('category').hasError('required')"> Categoria do filme é obrigatória </mat-error>
+          <mat-error *ngIf="movieForm.get('category').hasError('required')">
+            Categoria do filme é obrigatória
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="field-input">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label> Descrição </mat-label>
           <textarea formControlName="description" matInput></textarea>
-          <mat-error *ngIf="movieForm.get('description').hasError('required')"> Descrição do filme é obrigatório </mat-error>
+          <mat-error *ngIf="movieForm.get('description').hasError('required')">
+            Descrição do filme é obrigatório
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
           <mat-label> Diretor </mat-label>
           <input formControlName="director" matInput />
-          <mat-error *ngIf="movieForm.get('director').hasError('required')"> Diretor do filme é obrigatório </mat-error>
+          <mat-error *ngIf="movieForm.get('director').hasError('required')">
+            Diretor do filme é obrigatório
+          </mat-error>
         </mat-form-field>
       </div>
-      <button *ngIf="isEditing() == true" mat-flat-button color="primary" (click)="onEdit()">Atualizar</button>
-      <button *ngIf="isEditing() == false" mat-flat-button color="primary" (click)="onSubmit()">Enviar</button>
+      <button
+        *ngIf="isEditing() == true"
+        mat-flat-button
+        color="primary"
+        (click)="onEdit()"
+      >
+        Atualizar
+      </button>
+      <button
+        *ngIf="isEditing() == false"
+        mat-flat-button
+        color="primary"
+        (click)="onSubmit()"
+      >
+        Enviar
+      </button>
     </form>
   </mat-card-content>
 </mat-card>

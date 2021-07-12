@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardClientComponent } from './components/card-client/card-client.component';
 import { CardMovieComponent } from './components/card-movie/card-movie.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
-import { LocationFormComponent } from './components/location-form/location-form.component';
+import { LocationFormComponent } from './components/rent-form/location-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { MovieFormComponent } from './components/movie-form/movie-form.component';
+import { CardRentComponent } from './components/card-rent/card-rent.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'locations',
         component: LocationFormComponent
+      },
+      {
+        path: 'locations/all',
+        component: CardRentComponent
       },
     ],
   },

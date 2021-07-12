@@ -1,0 +1,38 @@
+<div class="listing">
+    <table>
+      <tr>
+        <th *ngFor="let col of columns">{{ col }}</th>
+      </tr>
+      <tr *ngFor="let r of rentList" class="listing">
+        <td>
+          <a>
+            {{ r.clienteId }}
+          </a>
+        </td>
+        <td>
+            {{ r.movieId }}
+        </td>
+        <td>
+            {{ r.atendenteId }}
+        </td>
+        <td>
+          {{ r.stardDate }}
+        </td>
+        <td>
+            {{ r.endDate }}
+          </td>
+        <td>
+          <button
+            mat-button
+            mat-raised-button
+            color="warn"
+            (click)="deleteRent(r)"
+          >
+            Apagar
+          </button>
+        </td>
+
+      </tr>
+    </table>
+  </div>
+  
