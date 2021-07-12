@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/Movie';
-import { ServiceMovieService } from 'src/app/service-movie.service';
+import { ServiceMovieService } from 'src/app/services/service-movie.service';
 
 @Component({
   selector: 'app-movie-form',
