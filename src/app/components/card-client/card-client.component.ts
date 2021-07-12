@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/Client';
-import { ClientService } from 'src/app/client.service';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-card-client',

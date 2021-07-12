@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { Client } from 'src/app/Client';
-import { ClientService } from 'src/app/client.service';
+import { ClientService } from 'src/app/services/client.service';
 import { Movie } from 'src/app/Movie';
 import { Info, Rent } from 'src/app/Rent';
-import { RentService } from 'src/app/rent.service';
-import { ServiceMovieService } from 'src/app/service-movie.service';
+import { RentService } from 'src/app/services/rent.service';
+import { ServiceMovieService } from 'src/app/services/service-movie.service';
 
 @Component({
   selector: 'app-card-rent',

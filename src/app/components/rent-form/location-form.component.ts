@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Client } from 'src/app/Client';
-import { ClientService } from 'src/app/client.service';
+import { ClientService } from 'src/app/services/client.service';
 import { Movie } from 'src/app/Movie';
-import { ServiceMovieService } from 'src/app/service-movie.service';
+import { ServiceMovieService } from 'src/app/services/service-movie.service';
 import { map, startWith } from 'rxjs/operators';
 import { Rent } from 'src/app/Rent';
 import { BirthDatePipePipe } from 'src/app/pipes/birth-date-pipe.pipe';
-import { RentService } from 'src/app/rent.service';
+import { RentService } from 'src/app/services/rent.service';
 
 @Component({
   selector: 'app-location-form',

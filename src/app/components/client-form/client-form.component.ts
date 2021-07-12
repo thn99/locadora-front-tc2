@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Client } from 'src/app/Client';
-import { ClientService } from 'src/app/client.service';
+import { ClientService } from 'src/app/services/client.service';
 
 import { BirthDatePipePipe } from 'src/app/pipes/birth-date-pipe.pipe';
 import { PhonePipePipe } from 'src/app/pipes/phone-pipe.pipe';
