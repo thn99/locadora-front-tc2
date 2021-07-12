@@ -29,8 +29,10 @@ export class MovieFormComponent implements OnInit {
     { id: 6, name: 'Ficção' },
   ];
 
-  constructor(private web: ServiceMovieService, private route : ActivatedRoute) {}
-
+  constructor(
+    private web: ServiceMovieService,
+    private route: ActivatedRoute
+  ) {}
 
   isEditing(): boolean {
     if (this.route.snapshot.paramMap.get('id')) {
@@ -47,19 +49,22 @@ export class MovieFormComponent implements OnInit {
   }
 
   getEditingMovie() {
-    this.route.queryParams.subscribe(param => {
+    this.route.queryParams.subscribe((param) => {
       const name = param['name'];
       const description = param['description'];
       const releaseDate = param['releaseDate'];
       const director = param['director'];
-      
 
       this.fillEditingForm(name, description, releaseDate, director);
-    })
+    });
   }
 
-  fillEditingForm(name : string, description : string, releaseDate : string, director : string) {
-    
+  fillEditingForm(
+    name: string,
+    description: string,
+    releaseDate: string,
+    director: string
+  ) {
     this.movieForm = new FormGroup({
       name: new FormControl(name, [Validators.required]),
       releaseDate: new FormControl(releaseDate, [
@@ -75,7 +80,6 @@ export class MovieFormComponent implements OnInit {
       category: new FormControl(null, [Validators.required]),
     });
   }
-
 
   startForm() {
     this.movieForm = new FormGroup({

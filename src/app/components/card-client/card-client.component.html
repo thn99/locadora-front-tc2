@@ -1,7 +1,7 @@
 <div class="listing">
   <table>
     <tr>
-      <th *ngFor="let col of columns">{{ col }}</th>
+      <th *ngFor="let col of columns" i18n>{{ col }}</th>
     </tr>
     <tr *ngFor="let p of peopleList">
       <td>
@@ -9,7 +9,7 @@
           {{ p.name }}
         </a>
       </td>
-      <td>
+      <td i18n>
         {{ getSex(p.sex) }}
       </td>
       <td>
@@ -21,14 +21,15 @@
       <td>
         {{ p.adress }}
       </td>
-      <td *ngIf="p.isAtendente == true">Sim</td>
-      <td *ngIf="p.isAtendente == false">Não</td>
+      <td *ngIf="p.isAtendente == true" i18n>Sim</td>
+      <td *ngIf="p.isAtendente == false" i18n>Não</td>
       <td>
         <button
           mat-button
           mat-raised-button
           color="warn"
           (click)="deleteClient(p)"
+          i18n
         >
           Apagar
         </button>
@@ -38,8 +39,9 @@
           mat-button
           mat-raised-button
           color="basic"
-          routerLink="{{p._id}}"
+          routerLink="{{ p._id }}"
           (click)="getClient(p)"
+          i18n
         >
           Editar
         </button>

@@ -1,7 +1,7 @@
 <div class="listing">
   <table>
     <tr>
-      <th *ngFor="let col of columns">{{ col }}</th>
+      <th *ngFor="let col of columns" i18n>{{ col }}</th>
     </tr>
     <tr *ngFor="let m of movieList" class="listing">
       <td>
@@ -9,7 +9,7 @@
           {{ m.name }}
         </a>
       </td>
-      <td>
+      <td i18n>
         {{ getCategory(m.category) }}
       </td>
       <td>
@@ -18,14 +18,15 @@
       <td>
         {{ m.director }}
       </td>
-      <td *ngIf="m.available == true">Sim</td>
-      <td *ngIf="m.available == false">Não</td>
+      <td *ngIf="m.available == true" i18n>Sim</td>
+      <td *ngIf="m.available == false" i18n>Não</td>
       <td>
         <button
           mat-button
           mat-raised-button
           color="warn"
           (click)="deleteMovie(m)"
+          i18n
         >
           Apagar
         </button>
@@ -37,6 +38,7 @@
           color="basic"
           routerLink="{{ m._id }}"
           (click)="getMovie(m)"
+          i18n
         >
           Editar
         </button>

@@ -8,54 +8,73 @@
     <form [formGroup]="movieForm">
       <div class="field-input">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Nome </mat-label>
+          <mat-label i18n> Nome </mat-label>
           <input formControlName="name" matInput />
-          <mat-error *ngIf="movieForm.get('name').hasError('required')">
+          <mat-error *ngIf="movieForm.get('name').hasError('required')" i18n>
             Nome do filme é obrigatório
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Ano </mat-label>
+          <mat-label i18n> Ano </mat-label>
           <input formControlName="releaseDate" matInput />
-          <mat-error *ngIf="movieForm.get('releaseDate').hasError('required')">
+          <mat-error
+            *ngIf="movieForm.get('releaseDate').hasError('required')"
+            i18n
+          >
             Ano do filme é obrigatório
           </mat-error>
-          <mat-error *ngIf="movieForm.get('releaseDate').hasError('pattern')">
+          <mat-error
+            *ngIf="movieForm.get('releaseDate').hasError('pattern')"
+            i18n
+          >
             Apenas números são permitidos
           </mat-error>
-          <mat-error *ngIf="movieForm.get('releaseDate').hasError('maxlength')">
+          <mat-error
+            *ngIf="movieForm.get('releaseDate').hasError('maxlength')"
+            i18n
+          >
             Apenas 4 dígitos são permitidos no campo "Ano" (por enquanto)
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Categoria</mat-label>
+          <mat-label i18n>Categoria</mat-label>
           <mat-select formControlName="category">
             <mat-option
+              i18n
               *ngFor="let cat of categoryList; let indexOfelement = index"
               [value]="indexOfelement + 1"
               >{{ cat.name }}</mat-option
             >
           </mat-select>
-          <mat-error *ngIf="movieForm.get('category').hasError('required')">
+          <mat-error
+            *ngIf="movieForm.get('category').hasError('required')"
+            i18n
+          >
             Categoria do filme é obrigatória
           </mat-error>
         </mat-form-field>
       </div>
       <div class="field-input">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Descrição </mat-label>
+          <mat-label i18n> Descrição </mat-label>
           <textarea formControlName="description" matInput></textarea>
-          <mat-error *ngIf="movieForm.get('description').hasError('required')">
+          <mat-error
+            *ngIf="movieForm.get('description').hasError('required')"
+            i18n
+          >
             Descrição do filme é obrigatório
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Diretor </mat-label>
+          <mat-label i18n> Diretor </mat-label>
           <input formControlName="director" matInput />
-          <mat-error *ngIf="movieForm.get('director').hasError('required')">
+          <mat-error
+            *ngIf="movieForm.get('director').hasError('required')"
+            i18n
+          >
             Diretor do filme é obrigatório
           </mat-error>
         </mat-form-field>
@@ -65,6 +84,7 @@
         mat-flat-button
         color="primary"
         (click)="onEdit()"
+        i18n
       >
         Atualizar
       </button>
@@ -73,6 +93,7 @@
         mat-flat-button
         color="primary"
         (click)="onSubmit()"
+        i18n
       >
         Enviar
       </button>

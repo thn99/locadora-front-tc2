@@ -24,10 +24,10 @@ export class LocationFormComponent implements OnInit {
     clienteId: undefined,
     atendenteId: undefined,
     stardDate: undefined,
-    endDate: undefined
+    endDate: undefined,
   };
   rentForm: FormGroup;
-  birthPipe : BirthDatePipePipe = new BirthDatePipePipe();
+  birthPipe: BirthDatePipePipe = new BirthDatePipePipe();
 
   constructor(
     private webClient: ClientService,
@@ -46,7 +46,7 @@ export class LocationFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.rentForm.valid) {
+    if (this.rentForm.valid) {
       const startDate = this.birthPipe.transform(
         this.rentForm.get('withdrawDate').value
       );
@@ -54,30 +54,34 @@ export class LocationFormComponent implements OnInit {
         this.rentForm.get('devolutionDate').value
       );
 
-      const startDateSplit : string[] = startDate.split('/');
-      const endDateSplit : string[] = endDate.split('/');
+      const startDateSplit: string[] = startDate.split('/');
+      const endDateSplit: string[] = endDate.split('/');
 
-      const startDateTimestamp = new Date(`${startDateSplit[1]}-${startDateSplit[0]}-${startDateSplit[2]}`);
-      const endDateTimestamp = new Date(`${endDateSplit[1]}-${endDateSplit[0]}-${endDateSplit[2]}`);
-      
+      const startDateTimestamp = new Date(
+        `${startDateSplit[1]}-${startDateSplit[0]}-${startDateSplit[2]}`
+      );
+      const endDateTimestamp = new Date(
+        `${endDateSplit[1]}-${endDateSplit[0]}-${endDateSplit[2]}`
+      );
+
       this.rent.movieId = this.rentForm.get('movieName').value;
       this.rent.clienteId = this.rentForm.get('clientName').value;
       this.rent.atendenteId = this.rentForm.get('atendente').value;
       this.rent.stardDate = startDateTimestamp.getTime();
       this.rent.endDate = endDateTimestamp.getTime();
-      
+
       this.webRent.createRent(this.rent).subscribe((res) => {
-        if(res.ok) alert("Sucesso")
-        else alert("Erro")
-      })
-    };
+        if (res.ok) alert('Sucesso');
+        else alert('Erro');
+      });
+    }
   }
 
   ngOnInit(): void {
     this.startForm();
     this.loadAvailableMovies();
     this.loadAttendantsOnly();
-    this.loadClientsOnly()
+    this.loadClientsOnly();
   }
 
   loadAttendantsOnly() {
@@ -102,7 +106,7 @@ export class LocationFormComponent implements OnInit {
     this.webMovie.getMovies().subscribe((res) => {
       const availableMovies = res.filter((m) => {
         return m.available == true;
-      })
+      });
       this.movieList = availableMovies;
     });
   }

@@ -59,15 +59,18 @@ export class ClientFormComponent implements OnInit {
       const date = this.birthDatePipe.transform(
         this.clientForm.get('birthDate').value
       );
-      
+
       const dateSplits = date.split('/');
-      const formattedDate = new Date(`${dateSplits[1]}-${dateSplits[0]}-${dateSplits[2]}`);
+      const formattedDate = new Date(
+        `${dateSplits[1]}-${dateSplits[0]}-${dateSplits[2]}`
+      );
       this.client.name = this.clientForm.get('name').value;
       this.client.sex = Number(this.clientForm.get('sex').value);
       this.client.birthDate = formattedDate.getTime();
       this.client.phone = this.clientForm.get('phone').value;
       this.client.adress = this.clientForm.get('adress').value;
-      this.client.isAtendente = this.clientForm.get('isAtendente').value == 1 ? true : false;
+      this.client.isAtendente =
+        this.clientForm.get('isAtendente').value == 1 ? true : false;
 
       this.web.registerClient(this.client).subscribe((res) => {
         if (res.ok) alert('Cadastrado');
@@ -77,13 +80,15 @@ export class ClientFormComponent implements OnInit {
     }
   }
 
-  onSubmitUpdate(){
+  onSubmitUpdate() {
     if (this.clientForm.valid) {
       const date = this.birthDatePipe.transform(
         this.clientForm.get('birthDate').value
       );
       const dateSplits = date.split('/');
-      const formattedDate = new Date(`${dateSplits[1]}-${dateSplits[0]}-${dateSplits[2]}`);
+      const formattedDate = new Date(
+        `${dateSplits[1]}-${dateSplits[0]}-${dateSplits[2]}`
+      );
       this.client._id = this.getUrlId();
       this.client.name = this.clientForm.get('name').value;
       this.client.sex = Number(this.clientForm.get('sex').value);
@@ -91,7 +96,7 @@ export class ClientFormComponent implements OnInit {
       this.client.phone = this.clientForm.get('phone').value;
       this.client.adress = this.clientForm.get('adress').value;
       this.client.isAtendente =
-      this.clientForm.get('isAtendente').value == 1 ? true : false;
+        this.clientForm.get('isAtendente').value == 1 ? true : false;
 
       this.web.updateClient(this.client).subscribe((res) => {
         if (res.ok) alert('Cadastrado');
@@ -116,20 +121,26 @@ export class ClientFormComponent implements OnInit {
   }
 
   getEditingPerson() {
-    this.route.queryParams.subscribe(param => {
+    this.route.queryParams.subscribe((param) => {
       const name = param['name'];
       const birthDate = param['birth'];
       const phone = param['phone'];
       const adress = param['adress'];
-      
-      const sanitizedBirth = new Date(Number(birthDate)).toLocaleDateString().replace(/\//g, '');
+
+      const sanitizedBirth = new Date(Number(birthDate))
+        .toLocaleDateString()
+        .replace(/\//g, '');
 
       this.fillEditingForm(name, sanitizedBirth, phone, adress);
-    })
+    });
   }
 
-  fillEditingForm(name : string, birthDate : string, phone : string, adress : string) {
-    
+  fillEditingForm(
+    name: string,
+    birthDate: string,
+    phone: string,
+    adress: string
+  ) {
     this.clientForm = new FormGroup({
       name: new FormControl(name, [Validators.required]),
       sex: new FormControl(null, [Validators.required]),
@@ -150,7 +161,7 @@ export class ClientFormComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isEditing()) {
-      this.getEditingPerson();;
+      this.getEditingPerson();
     } else {
       this.startForm();
     }

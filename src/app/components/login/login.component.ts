@@ -4,18 +4,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  loginForm : FormGroup;
+  loginForm: FormGroup;
 
-  constructor() { }
-  
+  constructor() {}
+
   startForm() {
     this.loginForm = new FormGroup({
       token: new FormControl(null, [Validators.required]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
-    })
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+    });
   }
 
   ngOnInit(): void {
@@ -27,7 +30,8 @@ export class LoginComponent implements OnInit {
   }
 
   approveLogin() {
-    return this.loginForm.get('token').valid && this.loginForm.get('password').valid;
+    return (
+      this.loginForm.get('token').valid && this.loginForm.get('password').valid
+    );
   }
-
 }

@@ -4,45 +4,56 @@ import { Observable } from 'rxjs';
 import { Movie } from './Movie';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiceMovieService {
+  endpointUrl = 'https://tc2-locadora-backend.glitch.me/api';
 
-  endpointUrl = "https://tc2-locadora-backend.glitch.me/api";
-
-  getMovies() : Observable<Movie[]> {
+  getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.endpointUrl + '/filmes');
   }
 
-  getMovie(id) : Observable<Movie> {
-    return this.http.get<Movie>(this.endpointUrl + '/filmes/' + id);
+  getMovie(id): Observable<Movie> {
+    return this.http.get<Movie>(this.endpointUrl + '/filmes/filme/' + id);
   }
 
-  registerMovie(movie) : Observable<any> {
+  registerMovie(movie): Observable<any> {
     let body = new HttpParams();
-    body = body.set("name", movie.name);
-    body = body.set("description", movie.description);
-    body = body.set("releaseDate", movie.releaseDate);
-    body = body.set("category", movie.category);
-    body = body.set("director", movie.director);
-    body = body.set("available", 'true');
-    return this.http.post(this.endpointUrl + '/filmes', body, {observe: "response"});
+    body = body.set('name', movie.name);
+    body = body.set('description', movie.description);
+    body = body.set('releaseDate', movie.releaseDate);
+    body = body.set('category', movie.category);
+    body = body.set('director', movie.director);
+    body = body.set('available', 'true');
+    return this.http.post(this.endpointUrl + '/filmes', body, {
+      observe: 'response',
+    });
   }
 
-  updateMovie(movie) : Observable<any> {
+  updateMovie(movie): Observable<any> {
     let body = new HttpParams();
-    body = body.set("name", movie.name);
-    body = body.set("description", movie.description);
-    body = body.set("releaseDate", movie.releaseDate);
-    body = body.set("category", movie.category);
-    body = body.set("director", movie.director);
-    body = body.set("available", movie.available);
-    return this.http.put(this.endpointUrl + '/filmes/' + movie._id, body, {observe: "response"});
+    body = body.set('name', movie.name);
+    body = body.set('description', movie.description);
+    body = body.set('releaseDate', movie.releaseDate);
+    body = body.set('category', movie.category);
+    body = body.set('director', movie.director);
+    body = body.set('available', movie.available);
+    return this.http.put(this.endpointUrl + '/filmes/' + movie._id, body, {
+      observe: 'response',
+    });
   }
 
-  deleteMovie(movie) : Observable<any> {
+  setAvailable(id): Observable<any> {
+    let body = new HttpParams();
+    body = body.set('available', 'true');
+    return this.http.put(this.endpointUrl + '/filmes/' + id, body, {
+      observe: 'response',
+    });
+  }
+
+  deleteMovie(movie): Observable<any> {
     return this.http.delete(this.endpointUrl + '/filmes/' + movie._id);
   }
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) {}
 }

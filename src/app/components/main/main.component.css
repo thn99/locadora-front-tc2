@@ -1,35 +1,35 @@
 mat-toolbar {
-    background: grey;
-    color: white;
+  background: grey;
+  color: white;
 }
 mat-sidenav {
-    margin: 16px;
-    width: 200px;
-    border-right: none;
-    background: grey;
-    color: white;
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: grey;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
 }
 
 .content {
-    height: calc(100vh - 98px);
-    margin: 16px;
-    margin-left: 32px;
-    display: flex;
-    
-    border-radius: 10px;
+  height: calc(100vh - 98px);
+  margin: 16px;
+  margin-left: 32px;
+  display: flex;
+
+  border-radius: 10px;
 }
 
 mat-sidenav-container {
-    height: calc(100vh - 65px);
+  height: calc(100vh - 65px);
 }
 
 .menu-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
 }

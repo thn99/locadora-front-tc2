@@ -1,50 +1,68 @@
 <mat-card>
   <mat-card-content>
     <div class="header">
-      <h2>Alugar filme</h2>
+      <h2 i18n>Alugar filme</h2>
     </div>
 
     <form [formGroup]="rentForm">
       <div class="field-input">
         <mat-form-field appearance="fill">
-          <mat-label>Filmes</mat-label>
+          <mat-label i18n>Filmes</mat-label>
           <mat-select formControlName="movieName">
-            <mat-option *ngFor="let movie of movieList" [value]="movie._id">{{
-              movie.name
-            }}</mat-option>
+            <mat-option
+              *ngFor="let movie of movieList"
+              [value]="movie._id"
+              i18n
+              >{{ movie.name }}</mat-option
+            >
           </mat-select>
-          <mat-error *ngIf="rentForm.get('movieName').hasError('required')">
+          <mat-error
+            *ngIf="rentForm.get('movieName').hasError('required')"
+            i18n
+          >
             Filme é obrigatório
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Clientes</mat-label>
+          <mat-label i18n>Clientes</mat-label>
           <mat-select formControlName="clientName">
-            <mat-option *ngFor="let people of peopleList" [value]="people._id">{{
-              people.name
-            }}</mat-option>
+            <mat-option
+              *ngFor="let people of peopleList"
+              [value]="people._id"
+              i18n
+              >{{ people.name }}</mat-option
+            >
           </mat-select>
-          <mat-error *ngIf="rentForm.get('clientName').hasError('required')">
+          <mat-error
+            *ngIf="rentForm.get('clientName').hasError('required')"
+            i18n
+          >
             Cliente é obrigatório
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Atendente</mat-label>
+          <mat-label i18n>Atendente</mat-label>
           <mat-select formControlName="atendente">
-            <mat-option *ngFor="let attendant of attendantList" [value]="attendant._id">{{
-              attendant.name
-            }}</mat-option>
+            <mat-option
+              *ngFor="let attendant of attendantList"
+              [value]="attendant._id"
+              i18n
+              >{{ attendant.name }}</mat-option
+            >
           </mat-select>
-          <mat-error *ngIf="rentForm.get('atendente').hasError('required')">
+          <mat-error
+            *ngIf="rentForm.get('atendente').hasError('required')"
+            i18n
+          >
             Atendente é obrigatório
           </mat-error>
         </mat-form-field>
       </div>
       <div class="field-input">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Data de retirada </mat-label>
+          <mat-label i18n> Data de retirada </mat-label>
           <input
             formControlName="withdrawDate"
             matInput
@@ -53,18 +71,20 @@
           />
           <mat-error
             *ngIf="rentForm.get('withdrawDate').hasError('required')"
+            i18n
           >
             Data de retirada é obrigatória
           </mat-error>
           <mat-error
             *ngIf="rentForm.get('withdrawDate').hasError('pattern')"
+            i18n
           >
             Valor inserido não segue o padrão DD/MM/AAAA
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Data de devolução </mat-label>
+          <mat-label i18n> Data de devolução </mat-label>
           <input
             formControlName="devolutionDate"
             matInput="date"
@@ -73,17 +93,19 @@
           />
           <mat-error
             *ngIf="rentForm.get('devolutionDate').hasError('required')"
+            i18n
           >
             Data de devolução é obrigatória
           </mat-error>
           <mat-error
             *ngIf="rentForm.get('devolutionDate').hasError('pattern')"
+            i18n
           >
             Valor inserido não segue o padrão DD/MM/AAAA
           </mat-error>
         </mat-form-field>
       </div>
-      <button mat-flat-button color="primary" (click)="onSubmit()">
+      <button mat-flat-button color="primary" (click)="onSubmit()" i18n>
         Alugar
       </button>
     </form>

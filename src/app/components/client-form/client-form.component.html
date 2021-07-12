@@ -1,39 +1,49 @@
 <mat-card>
   <mat-card-content>
     <div class="header">
-      <h2 *ngIf="isEditing() == false">Registrar pessoa</h2>
-      <h2 *ngIf="isEditing() == true">Editar pessoa</h2>
+      <h2 *ngIf="isEditing() == false" i18n>Registrar pessoa</h2>
+      <h2 *ngIf="isEditing() == true" i18n>Editar pessoa</h2>
     </div>
 
     <form [formGroup]="clientForm">
       <div class="field-input">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Nome </mat-label>
+          <mat-label i18n> Nome </mat-label>
           <input formControlName="name" matInput />
-          <mat-error *ngIf="clientForm.get('name').hasError('required')">
+          <mat-error *ngIf="clientForm.get('name').hasError('required')" i18n>
             Nome é obrigatório
           </mat-error>
         </mat-form-field>
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Data de nascimento </mat-label>
-          <input formControlName="birthDate" matInput placeholder="01/01/1990" mask="d0/M0/0000" />
-          <mat-error *ngIf="clientForm.get('birthDate').hasError('required')">
+          <mat-label i18n> Data de nascimento </mat-label>
+          <input
+            formControlName="birthDate"
+            matInput
+            placeholder="01/01/1990"
+            mask="d0/M0/0000"
+          />
+          <mat-error
+            *ngIf="clientForm.get('birthDate').hasError('required')"
+            i18n
+          >
             Data de Nascimento é obrigatório
           </mat-error>
-          <mat-error *ngIf="clientForm.get('birthDate').hasError('pattern')">
+          <mat-error
+            *ngIf="clientForm.get('birthDate').hasError('pattern')"
+            i18n
+          >
             Valor inserido não segue o padrão DD/MM/AAAA
           </mat-error>
         </mat-form-field>
-        
 
         <div class="full-width" appearance="outline">
-          <mat-label> Sexo </mat-label>
+          <mat-label i18n> Sexo </mat-label>
           <mat-radio-group aria-label="Escolha uma opção" formControlName="sex">
-            <mat-radio-button value="1">Masculino</mat-radio-button>
-            <mat-radio-button value="2">Feminino</mat-radio-button>
+            <mat-radio-button value="1" i18n>Masculino</mat-radio-button>
+            <mat-radio-button value="2" i18n>Feminino</mat-radio-button>
           </mat-radio-group>
           <div>
-            <mat-error *ngIf="clientForm.get('sex').hasError('required')">
+            <mat-error *ngIf="clientForm.get('sex').hasError('required')" i18n>
               Obrigatório
             </mat-error>
           </div>
@@ -41,47 +51,62 @@
       </div>
       <div class="field-input">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Telefone </mat-label>
+          <mat-label i18n> Telefone </mat-label>
           <input formControlName="phone" matInput />
-          <mat-error *ngIf="clientForm.get('phone').hasError('required')">
+          <mat-error *ngIf="clientForm.get('phone').hasError('required')" i18n>
             Telefone é obrigatório
           </mat-error>
-          <mat-error *ngIf="clientForm.get('phone').hasError('minlength')">
+          <mat-error *ngIf="clientForm.get('phone').hasError('minlength')" i18n>
             Telefone deve ter no mínimo 8 números
           </mat-error>
-          <mat-error *ngIf="clientForm.get('phone').hasError('maxlength')">
+          <mat-error *ngIf="clientForm.get('phone').hasError('maxlength')" i18n>
             Telefone deve ter no máximo 13 números (incluso dígito do país)
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> Endereço </mat-label>
+          <mat-label i18n> Endereço </mat-label>
           <input formControlName="adress" matInput />
-          <mat-error *ngIf="clientForm.get('adress').hasError('required')">
+          <mat-error *ngIf="clientForm.get('adress').hasError('required')" i18n>
             Endereço é obrigatório
           </mat-error>
         </mat-form-field>
       </div>
       <div class="full-width" appearance="outline">
-        <mat-label> Atendente da loja? </mat-label>
+        <mat-label i18n> Atendente da loja? </mat-label>
         <mat-radio-group
           aria-label="Escolha uma opção"
           formControlName="isAtendente"
         >
-          <mat-radio-button value="1">Sim</mat-radio-button>
-          <mat-radio-button value="0">Não</mat-radio-button>
+          <mat-radio-button value="1" i18n>Sim</mat-radio-button>
+          <mat-radio-button value="0" i18n>Não</mat-radio-button>
         </mat-radio-group>
         <div>
-          <mat-error *ngIf="clientForm.get('isAtendente').hasError('required')">
+          <mat-error
+            *ngIf="clientForm.get('isAtendente').hasError('required')"
+            i18n
+          >
             Obrigatório
           </mat-error>
         </div>
       </div>
 
-      <button *ngIf="isEditing() == false" mat-flat-button color="primary" (click)="onSubmit()">
+      <button
+        *ngIf="isEditing() == false"
+        mat-flat-button
+        color="primary"
+        (click)="onSubmit()"
+        i18n
+      >
         Enviar
       </button>
-      <button *ngIf="isEditing() == true" mat-flat-button color="primary" (click)="onSubmitUpdate()">
+      <button
+        *ngIf="isEditing() == true"
+        mat-flat-button
+        color="primary"
+        (click)="onSubmitUpdate()"
+        i18n
+      >
         Atualizar
       </button>
     </form>

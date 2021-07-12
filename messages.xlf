@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ col }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-client/card-client.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-movie/card-movie.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-rent/card-rent.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7708270344948043036" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ getSex(p.sex) }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-client/card-client.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-movie/card-movie.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6407152308703637761" datatype="html">
+        <source>Sim</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-client/card-client.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-movie/card-movie.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1479140584847264931" datatype="html">
+        <source>Não</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-client/card-client.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-movie/card-movie.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6568111958080902285" datatype="html">
+        <source> Apagar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-client/card-client.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-movie/card-movie.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-rent/card-rent.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2332784393609439278" datatype="html">
+        <source> Editar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-client/card-client.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/card-movie/card-movie.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2637191092329770701" datatype="html">
+        <source>Registrar pessoa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5928733340004847971" datatype="html">
+        <source>Editar pessoa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="845041155954588585" datatype="html">
+        <source> Nome </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8629090092657542476" datatype="html">
+        <source> Nome é obrigatório </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2199886731992171264" datatype="html">
+        <source> Data de nascimento </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="269831223385387766" datatype="html">
+        <source> Data de Nascimento é obrigatório </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6985272615666328314" datatype="html">
+        <source> Valor inserido não segue o padrão DD/MM/AAAA </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7767577383748825292" datatype="html">
+        <source> Sexo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4378543939301377539" datatype="html">
+        <source>Masculino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6990607239675897046" datatype="html">
+        <source>Feminino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4820927418388553923" datatype="html">
+        <source> Obrigatório </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">76,77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="388448973085385366" datatype="html">
+        <source> Telefone </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7341346469866429638" datatype="html">
+        <source> Telefone é obrigatório </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2914836231804012044" datatype="html">
+        <source> Telefone deve ter no mínimo 8 números </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6523702308018128239" datatype="html">
+        <source> Telefone deve ter no máximo 13 números (incluso dígito do país) </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4364735832393248938" datatype="html">
+        <source> Endereço </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5725078805447709488" datatype="html">
+        <source> Endereço é obrigatório </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="728306470374973630" datatype="html">
+        <source> Atendente da loja? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4097117933882429207" datatype="html">
+        <source> Enviar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">82,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3604156532468146472" datatype="html">
+        <source> Atualizar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/client-form/client-form.component.html</context>
+          <context context-type="linenumber">85,86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7741909665682105526" datatype="html">
+        <source> Token </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4519839404221630715" datatype="html">
+        <source> Token obrigatório </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3780781804971322184" datatype="html">
+        <source> Senha </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1321004264504158957" datatype="html">
+        <source> Senha é obrigatória - no mínimo 6 caracteres </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
